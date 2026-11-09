@@ -1,0 +1,857 @@
+/* STYLING RULES FOR INDIVIDUAL WEBSITE COMPONENTS */
+
+/* SALIM CODE */
+
+body {
+  margin: 0; /* Remove default body margin */
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Set default font family */
+  color: #333; /* Set default text color */
+  line-height: 1.6; /* Set line height for better readability */
+  background-color: #f4f4f4; /* Set background color to light gray */
+  font-size: 18px; /* Set a default font-size */
+}
+
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: #6f00ff; /* Set link color to purple */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+
+/* SALIM CODE END */
+
+/* HOME PAGE */
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* HEADER */
+
+.home-header {
+  width: 100%;
+  height: 150px;
+  padding: 0 5%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  background-color: #143d19;
+  color: white;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.brand p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* NAV BAR */
+
+.home-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.home-nav a:hover {
+  opacity: 0.7;
+}
+
+/* SPLIT HOMEPAGE */
+
+.home-panels {
+  width: 100%;
+  height: calc(100vh - 150px);
+  display: flex;
+}
+
+.home-panel {
+  width: 50%;
+  height: 100%;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* DARKEN BACKGROUND IMAGES */
+
+.home-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* TEXT */
+
+.panel-content {
+  position: relative;
+  z-index: 1;
+
+  text-align: center;
+  color: white;
+}
+
+.panel-content h2 {
+  margin: 0 0 1rem;
+  font-size: 2.2rem;
+}
+
+/* LEARN MORE BUTTON */
+
+.learn-more {
+  display: inline-block;
+
+  padding: 0.8rem 1.5rem;
+
+  background-color: #143d19;
+  color: white;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  border-radius: 6px;
+}
+
+.learn-more:hover {
+  background-color: #205c28;
+}
+
+/*  BACKGROUND IMAGES HOME PAGE */
+
+.projects-panel {
+  background-image: url('./assets/projects.png');
+}
+
+.experience-panel {
+  background-image: url('./assets/experience.png');
+}
+/* FOOTER */
+
+.site-footer {
+  width: 100%;
+  padding: 2rem;
+
+  background-color: #143d19;
+  color: white;
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.site-footer p {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-icons a {
+  color: white;
+  font-size: 1.8rem;
+
+  display: flex;
+  align-items: center;
+
+  transition: opacity 0.2s ease,
+   transform 0.2s ease;
+}
+
+.footer-icons a:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+/* PROJECTS PAGE */
+
+.projects-page {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 0;
+  box-sizing: border-box;
+}
+
+.projects-page h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 3rem;
+  color: #143d19;
+}
+
+.projects-intro {
+  text-align: center;
+  margin: 0.5rem 0 3rem;
+  color: #555;
+}
+
+
+/* PROJECT GRID */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* PROJECT TILES */
+.project-tile {
+  position: relative;
+  height: 300px;
+  background-color: #d8dfd5;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+
+  /* SHADOW AROUND CARD */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.3s ease;
+}
+
+.project-tile:hover {
+  transform: translateY(-5px);
+}
+
+
+/* CARD HOVER MECHANICS*/
+.project-overlay {
+
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background-color: #143d19;
+  color: white;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.project-overlay h2 {
+  margin: 0 0 0.5rem;
+  color: white;
+  font-size: 1.8rem;
+}
+
+
+/* SHORT DESCRIPTION */
+.project-overlay p {
+  margin: 0 0 1rem;
+  color: white;
+}
+
+
+/* VIEW PROJECT TEXT */
+.project-overlay span {
+  color: white;
+  font-weight: bold;
+}
+
+
+/* PROJECT DESCRIPTION VISABLE ON HOVER*/
+.project-tile:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-title {
+  /* FILLE PROJECT CARD*/
+  position: absolute;
+  inset: 0;
+
+  /* CENTERS TILE*/
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+
+  color: #143d19;
+  font-size: 1.8rem;
+}
+
+/* EXPERIENCE PAGE */
+
+.experience-page {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 0;
+  box-sizing: border-box;
+}
+
+.experience-title {
+  text-align: center;
+  margin: 0 0 3rem;
+  font-size: 3rem;
+  color: #143d19;
+}
+
+
+/* EACH MAJOR SECT */
+
+.experience-section {
+  margin-bottom: 4rem;
+}
+
+.experience-section > h2 {
+  margin: 0 0 1rem;
+
+  color: #333;
+  font-size: 2rem;
+}
+
+
+/* INDIVIDUAL EXP CARDS */
+
+.experience-card {
+  background-color: white;
+
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* CARD HEADINGS */
+
+.experience-card h3 {
+  margin: 0 0 0.75rem;
+
+  color: #143d19;
+
+  font-size: 1.6rem;
+}
+
+.experience-subtitle {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+
+/* DATES */
+
+.experience-date {
+  margin: 0 0 1rem;
+
+  color: #666;
+  font-size: 1rem;
+}
+
+
+/* SPACING */
+
+.experience-card p {
+  margin: 0.3rem 0;
+}
+
+
+/* BULLETS */
+
+.experience-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.5rem;
+}
+
+.experience-card li {
+  margin-bottom: 0.4rem;
+}
+
+
+/* RESUME DOWNLOAD */
+
+.resume-download {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.resume-button {
+  display: inline-block;
+
+  padding: 1rem 1.5rem;
+
+  background-color: #143d19;
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  border-radius: 6px;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.resume-button:hover {
+  background-color: #205c28;
+  color: white;
+  text-decoration: none;
+
+  transform: translateY(-2px);
+}
+
+/* CONTACT PAGE */
+
+.contact-page {
+  width: 100%;
+  min-height: 650px;
+
+  padding: 4rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  background-color: #f4f4f4;
+}
+
+
+/* CONTACT ME HEADING */
+
+.contact-page > h1 {
+  margin: 0 0 3rem;
+
+  color: #143d19;
+
+  font-size: 4rem;
+  text-align: center;
+}
+
+
+/* CONTACT INFO BOX */
+
+.contact-card {
+  width: 90%;
+  max-width: 550px;
+
+  padding: 3rem;
+
+  background-color: white;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+
+/* GET IN TOUCH CARD */
+
+.contact-card h2 {
+  margin: 0 0 1rem;
+
+  color: #143d19;
+
+  font-size: 2rem;
+}
+
+
+/* DESCRIPTION */
+
+.contact-message {
+  margin: 0 auto 2rem;
+
+  max-width: 400px;
+
+  color: #555;
+
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+
+/* CONTAINER FOR CONTACT LINKS */
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+
+/* INDIVIDUAL LINKS */
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  color: #143d19;
+
+  font-size: 1.15rem;
+  font-weight: bold;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+/* ICONS */
+
+.contact-link svg {
+  font-size: 1.6rem;
+}
+
+
+/* HOVER EFFECT */
+
+.contact-link:hover {
+  color: #143d19;
+  text-decoration: none;
+
+  opacity: 0.7;
+
+  transform: translateY(-2px);
+}
+/* PROJECT DETAIL PAGE */
+
+.project-detail-page {
+  width: 90%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+  padding: 4rem 0;
+
+  box-sizing: border-box;
+}
+
+
+/* BACK BUTTON */
+
+.back-to-projects {
+  display: inline-block;
+
+  margin-bottom: 2rem;
+
+  color: #143d19;
+
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.back-to-projects:hover {
+  text-decoration: underline;
+}
+
+
+/* MAIN PROJECT HEADING */
+
+.project-detail-page > h1 {
+  margin: 0 0 1rem;
+
+  color: #143d19;
+
+  font-size: 3rem;
+}
+
+
+/* SHORT PROJECT INTRO */
+
+.project-detail-intro {
+  margin: 0 0 3rem;
+
+  color: #555;
+
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+
+/* PROJECT INFORMATION SECTIONS */
+
+.project-detail-section {
+  margin-bottom: 2rem;
+  padding: 2rem;
+
+  background-color: white;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.project-detail-section h2 {
+  margin: 0 0 1rem;
+
+  color: #143d19;
+
+  font-size: 1.7rem;
+}
+
+
+.project-detail-section p {
+  margin: 0;
+
+  line-height: 1.7;
+}
+
+
+/* SKILLS TAGS */
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.75rem;
+}
+
+
+.technology-list span {
+  padding: 0.5rem 1rem;
+
+  background-color: #143d19;
+  color: white;
+
+  border-radius: 20px;
+
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+/* MOBILE FIXES */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+
+  .home-header {
+    height: auto;
+    min-height: 0;
+
+    padding: 1.25rem;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+  }
+
+  .brand {
+    text-align: center;
+  }
+
+  .brand h1 {
+    font-size: 1.7rem;
+  }
+
+  .brand p {
+    font-size: 0.9rem;
+  }
+
+  .home-nav {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 0.75rem 1.25rem;
+  }
+
+  .home-nav a {
+    font-size: 1rem;
+  }
+
+
+  /* HOME PAGE  */
+
+  .home-panels {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .home-panel {
+    width: 100%;
+    height: 450px;
+    min-height: 450px;
+
+    background-position: center;
+  }
+
+  .panel-content {
+    padding: 1rem;
+  }
+
+  .panel-content h2 {
+    font-size: 2rem;
+  }
+
+  .learn-more {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+
+
+  /* PROJECTS PAGE */
+
+  .projects-page {
+    width: 90%;
+    padding: 2rem 0;
+  }
+
+  .projects-page h1 {
+    font-size: 2.3rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-tile {
+    height: 250px;
+  }
+
+
+  /* PROJECT DETAIL PAGE */
+
+  .project-detail-page {
+    width: 90%;
+    padding: 2rem 0;
+  }
+
+  .project-detail-page > h1 {
+    font-size: 2.3rem;
+  }
+
+  .project-detail-intro {
+    font-size: 1.1rem;
+  }
+
+  .project-detail-section {
+    padding: 1.5rem;
+  }
+
+  .project-detail-section h2 {
+    font-size: 1.4rem;
+  }
+
+
+  /* CONTACT PAGE */
+
+  .contact-page {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .contact-page > h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-card {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  .contact-card h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact-message {
+    font-size: 1rem;
+  }
+
+  .contact-link {
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+  }
+
+
+  /* FOOTER */
+
+  .site-footer {
+    padding: 1.5rem 1rem;
+  }
+}
+/* EXPERIENCE */
+
+@media (max-width: 650px) {
+
+  .experience-page {
+    width: 90%;
+    padding: 2rem 0;
+  }
+
+  .experience-title {
+    font-size: 2.3rem;
+  }
+
+  .experience-section > h2 {
+    font-size: 1.6rem;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  .experience-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .resume-button {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

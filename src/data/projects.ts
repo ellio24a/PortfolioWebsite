@@ -760,4 +760,3 @@ export const projects: Project[] = [
     technologies: ['Circuit Playground Express', 'Electronics and wiring', 'Alligator clip prototyping', 'Cable management', 'Woodworking', 'Painting and finishing', 'Interaction design'],
   },
 ];
-                                                         

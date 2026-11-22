@@ -13,7 +13,7 @@ function Navbar() {
       <nav className="home-nav">  
         <Link to="/">Home</Link> 
         <Link to="/projects">Projects</Link>
-        <Link to="/experience">Experience</Link>
+        <Link to="/about">About Me</Link>
         <Link to="/contactme">Contact Me</Link>
       </nav>
     </header>

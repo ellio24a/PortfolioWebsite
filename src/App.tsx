@@ -1,18 +1,18 @@
 /* SETS UP THE ROUTING PATHS FOR EACH PAGE IN THE WEBSITE */
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
-import Experience from './pages/Experience';
+import AboutMe from './pages/AboutMe';
 import ContactMe from './pages/ContactMe';
 
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}> {/* SO LINKS WORK UNDER /PortfolioWebsite/ ON GITHUB PAGES */}
       <Routes>
 
         <Route
@@ -31,8 +31,14 @@ function App() {
         />
 
         <Route
+          path="/about"
+          element={<AboutMe />}
+        />
+
+        {/* THE OLD /experience LINK NOW GOES TO THE ABOUT ME PAGE */}
+        <Route
           path="/experience"
-          element={<Experience />}
+          element={<Navigate to="/about" replace />}
         />
 
         <Route

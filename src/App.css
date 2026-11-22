@@ -5,19 +5,20 @@
 body {
   margin: 0; /* Remove default body margin */
   font-family: 'Helvetica Neue', Arial, sans-serif; /* Set default font family */
-  color: #333; /* Set default text color */
+  color: #1f2d20; /* Set default text color */
   line-height: 1.6; /* Set line height for better readability */
-  background-color: #f4f4f4; /* Set background color to light gray */
+  background-color: #acb7aa; /* Set background color to light gray */
   font-size: 18px; /* Set a default font-size */
 }
 
 a {
   text-decoration: none; /* Remove underline from links */
-  color: #6f00ff; /* Set link color to purple */
+  color: #2f6b37; /* Set link color to purple */
 }
 
 a:hover {
   text-decoration: underline; /* Underline links on hover */
+  color: #143d19; 
 }
 
 /* SALIM CODE END */
@@ -33,7 +34,7 @@ a:hover {
 
 .home-header {
   width: 100%;
-  height: 150px;
+  height: 90px;
   padding: 0 5%;
 
   display: flex;
@@ -44,6 +45,7 @@ a:hover {
 
   background-color: #143d19;
   color: white;
+  /**border-bottom: 4px solid #b5593c**/
 }
 
 .brand h1 {
@@ -72,19 +74,25 @@ a:hover {
 }
 
 .home-nav a:hover {
-  opacity: 0.7;
+  opacity: 1;
+  color: #c9a24b;
 }
 
 /* SPLIT HOMEPAGE */
 
 .home-panels {
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 90px);
   display: flex;
+
+  gap: 1rem;             /* white space between the two pictures */
+  padding: 1rem;         /* white space around them and under the header */
+  box-sizing: border-box;  /* keeps the padding inside the 100vh height */
+  background-color: #acb7aa;
 }
 
 .home-panel {
-  width: 50%;
+  flex: 1;                 /* replaces width: 50% so the gap fits */
   height: 100%;
 
   position: relative;
@@ -95,6 +103,9 @@ a:hover {
 
   background-size: cover;
   background-position: center;
+
+  border-radius: 10px;     /* rounded corners (optional) */
+  overflow: hidden;        /* keeps the dark overlay inside the corners */
 }
 
 /* DARKEN BACKGROUND IMAGES */
@@ -139,9 +150,9 @@ a:hover {
 }
 
 .learn-more:hover {
-  background-color: #205c28;
+  background-color: #c9a24b;
+  color: #143d19;
 }
-
 /*  BACKGROUND IMAGES HOME PAGE */
 
 .projects-panel {
@@ -149,13 +160,13 @@ a:hover {
 }
 
 .experience-panel {
-  background-image: url('./assets/experience.png');
+  background-image: url('./assets/EditedHeadshot.jpg');
 }
 /* FOOTER */
 
 .site-footer {
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
 
   background-color: #143d19;
   color: white;
@@ -165,20 +176,20 @@ a:hover {
 }
 
 .site-footer p {
-  margin: 0 0 1rem;
-  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
 }
 
 .footer-icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .footer-icons a {
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 
   display: flex;
   align-items: center;
@@ -188,8 +199,9 @@ a:hover {
 }
 
 .footer-icons a:hover {
-  opacity: 0.7;
+  opacity: 1;
   transform: translateY(-2px);
+  color: #c9a24b;
 }
 
 /* PROJECTS PAGE */
@@ -212,10 +224,18 @@ a:hover {
 .projects-intro {
   text-align: center;
   margin: 0.5rem 0 3rem;
-  color: #555;
+  color: #3b4a3c;
 }
 
-
+.projects-intro::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 4px;
+  margin: 1.5rem auto 0;
+  background-color: #143d19;
+  border-radius: 2px;
+}
 /* PROJECT GRID */
 
 .projects-grid {
@@ -228,7 +248,7 @@ a:hover {
 .project-tile {
   position: relative;
   height: 300px;
-  background-color: #d8dfd5;
+  background-color: #f4f1ea;
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
@@ -243,6 +263,15 @@ a:hover {
   transform: translateY(-5px);
 }
 
+
+.project-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills the tile without stretching */
+  display: block;
+}
 
 /* CARD HOVER MECHANICS*/
 .project-overlay {
@@ -327,6 +356,15 @@ a:hover {
   font-size: 3rem;
   color: #143d19;
 }
+.experience-title::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 4px;
+  margin: 1rem auto 0;       /* centred under the title */
+  background-color: #143d19;
+  border-radius: 2px;
+}
 
 
 /* EACH MAJOR SECT */
@@ -338,7 +376,7 @@ a:hover {
 .experience-section > h2 {
   margin: 0 0 1rem;
 
-  color: #333;
+  color: #1f2d20;
   font-size: 2rem;
 }
 
@@ -346,7 +384,7 @@ a:hover {
 /* INDIVIDUAL EXP CARDS */
 
 .experience-card {
-  background-color: white;
+  background-color: #f4f1ea;
 
   padding: 2rem 2.5rem;
   margin-bottom: 2rem;
@@ -414,8 +452,8 @@ a:hover {
 
   padding: 1rem 1.5rem;
 
-  background-color: #143d19;
-  color: white;
+  background-color: #143d19; 
+  color: #f4f1ea;
 
   text-decoration: none;
 
@@ -430,8 +468,8 @@ a:hover {
 }
 
 .resume-button:hover {
-  background-color: #205c28;
-  color: white;
+  background-color: #c9a24b;
+  color: #f4f1ea;
   text-decoration: none;
 
   transform: translateY(-2px);
@@ -451,7 +489,7 @@ a:hover {
 
   box-sizing: border-box;
 
-  background-color: #f4f4f4;
+  background-color: #acb7aa;
 }
 
 
@@ -465,6 +503,15 @@ a:hover {
   font-size: 4rem;
   text-align: center;
 }
+.contact-page > h1::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 4px;
+  margin: 1rem auto 0;
+  background-color: #143d19;
+  border-radius: 2px;
+}
 
 
 /* CONTACT INFO BOX */
@@ -475,7 +522,7 @@ a:hover {
 
   padding: 3rem;
 
-  background-color: white;
+  background-color: #f4f1ea;
 
   border-radius: 12px;
 
@@ -555,7 +602,7 @@ a:hover {
 /* HOVER EFFECT */
 
 .contact-link:hover {
-  color: #143d19;
+  color: #c9a24b;
   text-decoration: none;
 
   opacity: 0.7;
@@ -609,7 +656,7 @@ a:hover {
 .project-detail-intro {
   margin: 0 0 3rem;
 
-  color: #555;
+  color: #3b4a3c;
 
   font-size: 1.25rem;
   line-height: 1.6;
@@ -622,7 +669,7 @@ a:hover {
   margin-bottom: 2rem;
   padding: 2rem;
 
-  background-color: white;
+  background-color: #f4f1ea;
 
   border-radius: 12px;
 
@@ -853,5 +900,603 @@ a:hover {
     width: 100%;
     text-align: center;
     box-sizing: border-box;
+  }
+
+}
+Project detail additions · CSS
+/* ===== PROJECT DETAIL PAGE – NEW STYLES =====
+   PASTE THIS AT THE BOTTOM OF App.css, AFTER EVERYTHING ELSE
+   (OUTSIDE ANY @media BLOCK). IF YOU PASTED THE EARLIER VERSION,
+   DELETE THAT FIRST AND USE THIS INSTEAD. */
+ 
+/* TITLE AREA */
+.project-hero {
+  margin-bottom: 2rem;
+}
+ 
+.project-hero h1 {
+  margin: 0 0 0.75rem;
+  color: #143d19;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+ 
+.project-hero .project-detail-intro {
+  margin: 0;
+}
+
+/* GREEN BAR UNDER THE DESCRIPTION, MATCHING THE OTHER PAGES */
+.project-hero::after {
+  content: "";
+  display: block;
+  width: 1100px;
+  height: 4px;
+  margin-top: .5rem;
+  margin-bottom: 1.5rem;
+  background-color: #143d19;
+  border-radius: 2px;
+}
+ 
+/* VIDEO / IMAGE AT THE TOP */
+.project-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: #000;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+ 
+/* QUICK FACTS STRIP */
+.project-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+  padding: 1.5rem;
+  background-color: #143d19;
+  border-radius: 12px;
+  color: #f4f1ea;
+}
+ 
+.project-facts dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c9a24b;
+}
+ 
+.project-facts dd {
+  margin: 0.25rem 0 0;
+  font-weight: bold;
+}
+ 
+/* CONTENTS LINKS */
+.project-contents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+ 
+.project-contents span {
+  margin-right: 0.5rem;
+  font-weight: bold;
+  color: #143d19;
+}
+ 
+.project-contents a {
+  padding: 0.35rem 0.9rem;
+  background-color: #f4f1ea;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #143d19;
+  text-decoration: none;
+}
+ 
+.project-contents a:hover {
+  background-color: #c9a24b;
+  text-decoration: none;
+}
+ 
+/* SECTIONS */
+.project-detail-section {
+  scroll-margin-top: 1.5rem;   /* SPACE ABOVE A SECTION WHEN JUMPED TO */
+}
+ 
+.project-detail-section h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #c9a24b;
+  display: inline-block;
+}
+ 
+.project-detail-section p {
+  max-width: 70ch;
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+ 
+.project-detail-section p:last-child {
+  margin-bottom: 0;
+}
+ 
+/* SECTIONS WITH A PICTURE: TEXT ON ONE SIDE, PICTURE ON THE OTHER */
+.project-detail-section.has-image {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+ 
+.has-image .section-image {
+  order: 2;                         /* PICTURE ON THE RIGHT */
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  position: sticky;                 /* STAYS IN VIEW WHILE YOU READ */
+  top: 1.5rem;
+}
+ 
+.has-image.image-left {
+  grid-template-columns: 1fr 1.5fr;
+}
+ 
+.has-image.image-left .section-image {
+  order: 0;                         /* PICTURE ON THE LEFT */
+}
+ 
+/* SLOGAN / PULL QUOTE */
+.project-quote {
+  margin: 0.5rem 0 1.5rem;
+  padding-left: 1.25rem;
+  border-left: 4px solid #c9a24b;
+  color: #143d19;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: italic;
+}
+ 
+/* REFERENCES */
+.project-references {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+}
+ 
+.project-references li {
+  margin-bottom: 0.6rem;
+}
+ 
+.project-references a {
+  font-weight: bold;
+}
+
+/* ===== REFLECTION SECTION =====
+   PASTE THIS AT THE VERY BOTTOM OF App.css (BELOW THE PROJECT DETAIL STYLES).
+   IF YOU ALREADY PASTED AN EARLIER "REFLECTION SECTION" BLOCK, DELETE IT FIRST
+   (FROM ITS "===== REFLECTION SECTION =====" COMMENT TO THE END OF THE FILE). */
+
+/* THE WHOLE REFLECTION SITS IN A SLIGHTLY DARKER PANEL SO IT'S CLEARLY
+   SEPARATE FROM THE GROUP REPORT AROUND IT */
+.reflection {
+  margin: 4rem 0;
+  padding: 1.5rem;
+  background-color: rgba(20, 61, 25, 0.1);
+  border-radius: 16px;
+}
+
+/* DARK GREEN BANNER THAT STARTS THE REFLECTION */
+.reflection-banner {
+  margin: 0 0 1.5rem;
+  padding: 2.5rem 2rem;
+  background-color: #143d19;
+  border-radius: 12px;
+  color: #f4f1ea;
+  text-align: center;
+  scroll-margin-top: 1.5rem;
+}
+
+.reflection-banner h2 {
+  margin: 0;
+  font-size: 2.4rem;
+  color: #f4f1ea;
+}
+
+.reflection-banner h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  margin: 0.75rem auto 0;
+  background-color: #c9a24b;
+  border-radius: 2px;
+}
+
+.reflection-banner p {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  color: #d9dccf;
+}
+
+.reflection .project-detail-section:last-of-type {
+  margin-bottom: 0;
+}
+
+/* SMALL MARKER AT THE END OF THE REFLECTION */
+.reflection-end {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #143d19;
+}
+
+/* HIGHLIGHTS THE "MY REFLECTION" BUTTON IN THE CONTENTS ROW */
+.project-contents a.contents-reflection {
+  background-color: #143d19;
+  color: #f4f1ea;
+}
+
+.project-contents a.contents-reflection:hover {
+  background-color: #c9a24b;
+  color: #143d19;
+}
+
+/* "SHOTS I'M PROUDEST OF" CARDS */
+.section-items {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.section-item {
+  padding: 1.25rem 1.5rem;
+  background-color: #ffffff;
+  border-left: 4px solid #c9a24b;
+  border-radius: 10px;
+}
+
+/* CARDS WITH PICTURES: PICTURES ON THE LEFT, TEXT ON THE RIGHT */
+.section-item.has-pics {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.section-item-pics {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.section-item-pics img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.section-item h3 {
+  margin: 0 0 0.75rem;
+  color: #143d19;
+  font-size: 1.2rem;
+}
+
+.section-item ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.section-item li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.section-item li:last-child {
+  margin-bottom: 0;
+}
+
+/* BEHIND-THE-SCENES PHOTOS WITH CAPTIONS */
+.section-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.section-gallery figure {
+  margin: 0;
+}
+
+.section-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.section-gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .reflection {
+    padding: 0.75rem;
+  }
+
+  .reflection-banner {
+    padding: 2rem 1.25rem;
+  }
+
+  .reflection-banner h2 {
+    font-size: 1.9rem;
+  }
+
+  .section-item.has-pics {
+    grid-template-columns: 1fr;
+  }
+}
+ 
+/* MOBILE: STACK PICTURE ABOVE TEXT */
+@media (max-width: 768px) {
+  .project-hero h1 {
+    font-size: 2.2rem;
+  }
+ 
+  .project-detail-section.has-image,
+  .has-image.image-left {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+ 
+  .has-image .section-image,
+  .has-image.image-left .section-image {
+    order: 0;
+    position: static;
+  }
+ 
+  .project-quote {
+    font-size: 1.4rem;
+  }
+ 
+  .project-detail-section p {
+    font-size: 1rem;
+  }
+}
+/* ===== PROJECT 2 (DORA) ADDITIONS ===== */
+
+/* SQUARE VIDEOS: SHOWN AT A SENSIBLE SIZE, CENTRED, NOT CROPPED */
+.project-media.is-square {
+  aspect-ratio: 1 / 1;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+}
+
+/* TALL (PORTRAIT) PROJECT IMAGE: SHOWS THE WHOLE PICTURE, CENTRED */
+.project-media.is-portrait {
+  width: auto;           /* THE PICTURE SETS ITS OWN SIZE, SO THERE ARE NO EMPTY BORDERS */
+  height: auto;
+  aspect-ratio: auto;
+  max-width: min(100%, 520px);
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: initial;
+  background-color: transparent;
+}
+
+/* "READ THE FULL REPORT" BUTTON */
+.report-button {
+  display: inline-block;
+  margin: 0 0 2rem;
+  padding: 0.8rem 1.4rem; 
+  background-color: #143d19;
+  color: #f4f1ea; 
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.report-button:hover {
+  background-color: #c9a24b; 
+  color: #f4f1ea;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* BIG NUMBERS (SURVEY STATS) */
+.section-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.section-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.5rem;
+  background-color: #143d19;
+  border-radius: 10px;
+  color: #f4f1ea;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2.6rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #c9a24b;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+}
+
+/* SIMPLE BULLET LIST */
+.section-bullets {
+  max-width: 70ch;
+  margin: 1rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.section-bullets li {
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+}
+
+/* NUMBERED STEP-BY-STEP PICTURES */
+.section-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.section-steps li {
+  position: relative;
+  counter-increment: step;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.section-steps li::before {
+  content: counter(step);
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c9a24b;
+  color: #143d19;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.section-steps img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .stat-value {
+    font-size: 2.1rem;
+  }
+
+  .section-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+ 
+
+
+/* ABOUT ME PAGE */
+
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) 1fr;
+  gap: 2.5rem;
+  align-items: center;
+
+  background-color: #f4f1ea;
+  padding: 2.5rem;
+  margin-bottom: 4rem;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-text h2 {
+  margin: 0 0 1rem;
+  color: #143d19;
+  font-size: 2rem;
+}
+
+.about-text p {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+  color: #1f2d20;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* SKILL CARDS */
+
+.about-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.about-skills .experience-card {
+  margin-bottom: 0;
+}
+
+.experience-card .skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-card .skill-tags li {
+  margin: 0;
+  padding: 0.3rem 0.8rem;
+  background-color: #acb7aa;
+  color: #143d19;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .about-photo {
+    max-width: 320px;
+    margin: 0 auto;
   }
 }

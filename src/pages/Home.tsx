@@ -22,9 +22,9 @@ function Home() {
 
         <section className="home-panel experience-panel"> {/* ESTABLISHES AND NAMES THE EXPERIENCE SECTION */}
           <div className="panel-content">
-            <h2>Experience</h2>
+            <h2>About Me</h2>
 
-            <Link to="/experience" className="learn-more"> {/* LINKS TO EXPERIENCE PAGE */}
+            <Link to="/about" className="learn-more"> {/* LINKS TO ABOUT ME PAGE */}
               Learn More 
             </Link>
           </div>

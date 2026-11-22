@@ -27,9 +27,7 @@ function Projects() {
               className="project-tile"
               key={project.id} 
             >
-              <h2 className="project-title">
-                {project.title}
-              </h2>
+              <img src={project.image} alt={project.title} className="project-image" style={{ objectPosition: project.imagePosition }} />
 
               <div className="project-overlay">
                 <h2>{project.title}</h2>

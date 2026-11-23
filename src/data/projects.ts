@@ -4,6 +4,7 @@
 import easypixTile from '../assets/Easypix.png';
 import easypixVideo from '../assets/easypix/easypix-video.mp4';
 import easypixPoster from '../assets/easypix/poster.jpg';
+import easypixScreenplay from '../assets/easypix/easypix-screenplay.pdf';
 import easypixBedroom from '../assets/easypix/bedroom.jpg';
 import easypixSuitcase from '../assets/easypix/suitcase.jpg';
 import easypixBridge from '../assets/easypix/bridge.jpg';
@@ -118,6 +119,8 @@ export const projects: Project[] = [
 
     video: easypixVideo,
     videoPoster: easypixPoster,
+
+    report: { url: easypixScreenplay, label: 'Download the screenplay (PDF)' },
 
     facts: [
       { label: 'Type', value: 'Group video production' },

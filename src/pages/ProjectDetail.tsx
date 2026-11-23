@@ -205,13 +205,6 @@ function ProjectDetail() {
           </dl>
         )}
 
-        {/* LINK TO THE FULL REPORT */}
-        {project.report && (
-          <a className="report-button" href={project.report.url} target="_blank" rel="noreferrer">
-            {project.report.label} ↗
-          </a>
-        )}
-
         {/* CONTENTS LINKS (ONLY WHEN THERE ARE SEVERAL SECTIONS) */}
         {project.sections.length > 2 && (
           <nav className="project-contents" aria-label="Contents">
